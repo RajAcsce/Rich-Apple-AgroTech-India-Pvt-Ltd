@@ -65,8 +65,8 @@ function ContactInfo() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'info.richapple@gmail.com',
-      link: 'mailto:info.richapple@gmail.com',
+      content: 'info.richappleagrotech@gmail.com',
+      link: 'mailto:info.richappleagrotech@gmail.com',
       desc: 'For enquiries & feedback'
     }
   ]
@@ -162,7 +162,7 @@ function ContactSection() {
       await new Promise(resolve => setTimeout(resolve, 1500))
       
       // Construct email body
-      const mailtoLink = `mailto:info.richapple@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:info.richappleagrotech@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
       )}`
       

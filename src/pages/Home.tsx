@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -409,8 +409,8 @@ function WhyChooseUs() {
 function TargetUsers() {
   const users = [
     { icon: Users, title: 'Farmer', desc: 'Practical solutions that increase your yield and income. Soil-friendly products designed for Indian conditions.', link: '/products', cta: 'Explore Products' },
-    { icon: Handshake, title: 'Dealer / Partner', desc: 'Join our growing distribution network. Be part of the agricultural transformation across India.', link: '/about', cta: 'Become a Partner' },
-    { icon: Briefcase, title: 'Investor', desc: 'A high-growth AgriTech opportunity with strong fundamentals, experienced leadership, and massive market potential.', link: '/about', cta: 'Learn More' },
+    { icon: Handshake, title: 'Dealer / Partner', desc: 'Join our growing distribution network. Be part of the agricultural transformation across India.', link: '/contact', cta: 'Become a Partner' },
+    { icon: Briefcase, title: 'Investor', desc: 'A high-growth AgriTech opportunity with strong fundamentals, experienced leadership, and massive market potential.', link: '/contact', cta: 'Learn More' },
   ]
 
   const headerRef = useScrollReveal<HTMLDivElement>({ y: 30 })
@@ -470,36 +470,12 @@ function Testimonials() {
     { quote: "Rich Apple Agrotech has consistently exceeded our expectations. Their product quality, competitive pricing, and dedication to sustainable agriculture make them an ideal partner for long-term growth. We're proud to be associated with them.", author: 'Prakash Patil', title: 'Hariyali Crop Science Pvt Ltd, Maharashtra' },
   ]
 
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const [activeDot, setActiveDot] = useState(0)
   const headerRef = useScrollReveal<HTMLDivElement>({ y: 30 })
-
-  const handleDotClick = (index: number) => {
-    const container = scrollRef.current
-    if (!container) return
-    const cardWidth = container.children[0]?.clientWidth || 0
-    container.scrollTo({ left: index * cardWidth, behavior: 'smooth' })
-    setActiveDot(index)
-  }
-
-  useEffect(() => {
-    const container = scrollRef.current
-    if (!container) return
-
-    const handleScroll = () => {
-      const cardWidth = container.children[0]?.clientWidth || 1
-      const index = Math.round(container.scrollLeft / cardWidth)
-      setActiveDot(index)
-    }
-
-    container.addEventListener('scroll', handleScroll, { passive: true })
-    return () => container.removeEventListener('scroll', handleScroll)
-  }, [])
 
   return (
     <section style={{ backgroundColor: '#1a1a1a', padding: '7.5rem 0' }}>
       <div className="max-w-[1280px] mx-auto" style={{ padding: '0 2rem' }}>
-        <div ref={headerRef} className="text-center" style={{ marginBottom: '3rem' }}>
+        <div ref={headerRef} className="text-center" style={{ marginBottom: '3.5rem' }}>
           <span className="font-sans font-medium uppercase block" style={{ fontSize: '13px', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>
             TESTIMONIALS
           </span>
@@ -509,54 +485,31 @@ function Testimonials() {
         </div>
 
         <div
-          ref={scrollRef}
-          className="hide-scrollbar flex"
-          style={{
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            scrollBehavior: 'smooth',
-            gap: '20px',
-          }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {testimonials.map((t) => (
             <div
               key={t.author}
-              className="flex-shrink-0"
+              className="flex flex-col justify-between transition-all duration-300 hover:scale-[1.02]"
               style={{
-                scrollSnapAlign: 'center',
-                minWidth: '60%',
                 background: 'rgba(255,255,255,0.05)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: '16px',
-                padding: '24px 32px',
+                padding: '32px',
               }}
             >
-              <p className="font-serif italic" style={{ fontSize: '20px', color: '#ffffff', lineHeight: 1.7, marginBottom: '1.2rem' }}>
+              <p className="font-serif italic" style={{ fontSize: '18px', color: '#ffffff', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                 "{t.quote}"
               </p>
-              <p className="font-sans font-medium" style={{ fontSize: '17px', color: '#ffffff' }}>
-                {t.author}
-              </p>
-              <p className="font-sans" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)' }}>
-                {t.title}
-              </p>
+              <div>
+                <p className="font-sans font-medium" style={{ fontSize: '17px', color: '#ffffff' }}>
+                  {t.author}
+                </p>
+                <p className="font-sans" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)', marginTop: '4px' }}>
+                  {t.title}
+                </p>
+              </div>
             </div>
-          ))}
-        </div>
-
-        <div className="flex justify-center" style={{ gap: '12px', marginTop: '2rem' }}>
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => handleDotClick(i)}
-              className="transition-colors duration-300"
-              style={{
-                width: '8px',
-                height: '8px',
-                borderRadius: '50%',
-                backgroundColor: activeDot === i ? '#bc6c18' : 'rgba(255,255,255,0.3)',
-              }}
-            />
           ))}
         </div>
       </div>
@@ -640,9 +593,9 @@ function TopBar() {
         <Phone size={14} />
         <span>+91 84215 32100</span>
       </a>
-      <a href="mailto:info.richapple@gmail.com" className="flex items-center gap-2 transition-colors duration-300 hover:text-accent" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>
+      <a href="mailto:info.richappleagrotech@gmail.com" className="flex items-center gap-2 transition-colors duration-300 hover:text-accent" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>
         <Mail size={14} />
-        <span>info.richapple@gmail.com</span>
+        <span>info.richappleagrotech@gmail.com</span>
       </a>
       <span className="flex items-center gap-2" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>
         <Clock size={14} />

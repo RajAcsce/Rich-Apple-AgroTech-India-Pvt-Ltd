@@ -205,7 +205,7 @@ function ApplicationForm() {
       await new Promise(resolve => setTimeout(resolve, 1500))
       
       // Construct email body
-      const mailtoLink = `mailto:info.richapple@gmail.com?subject=Job Application: ${encodeURIComponent(formData.position)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:info.richappleagrotech@gmail.com?subject=Job Application: ${encodeURIComponent(formData.position)}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nPosition: ${formData.position}\n\nCover Letter:\n${formData.message}`
       )}`
       

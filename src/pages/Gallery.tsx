@@ -92,9 +92,7 @@ function PhotoGallery() {
                     </h4>
                   </div>
                   
-                  <div className="flex items-center text-secondary text-xs font-bold uppercase tracking-widest gap-2">
-                    <Maximize2 size={14} style={{ color: '#bc6c18' }} /> Verified Record
-                  </div>
+
                 </div>
               </div>
             );

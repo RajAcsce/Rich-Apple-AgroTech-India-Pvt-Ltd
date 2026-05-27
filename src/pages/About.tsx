@@ -265,12 +265,6 @@ function LeadershipProfile() {
       title: 'Founder & CEO',
       desc: "Visionary leader responsible for strategic growth, innovation, and building long-term business value. With 15+ years of agricultural expertise, he leads the company's mission to transform Indian agriculture through technology and field-tested solutions.",
       image: '/images/Mr_Bhimrao_Saymote_image-removebg-preview.png'
-    },
-    {
-      name: 'Mr. Prathamesh Dixit',
-      title: 'Business & Operations Head',
-      desc: "Leads business operations, partnerships, and ensures sustainable growth across all verticals. His strategic approach drives operational excellence and market expansion, connecting our products to farmers across Maharashtra and beyond.",
-      image: '/images/prathamesh_dixit.jpeg'
     }
   ]
 
@@ -283,7 +277,7 @@ function LeadershipProfile() {
           </h2>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
+        <div ref={ref} className="grid grid-cols-1 gap-8 max-w-[500px] mx-auto">
           {leaders.map((leader, i) => (
             <div key={i} className="leader-card bg-white" style={{ border: '1px solid #e5e2d8', borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
               <div
@@ -445,8 +439,8 @@ function ContactInfo() {
           <h4 className="font-sans font-medium" style={{ fontSize: '22px', letterSpacing: '-0.02em', color: '#272c1d', marginBottom: '0.5rem' }}>
             Email
           </h4>
-          <a href="mailto:info.richapple@gmail.com" className="font-sans transition-colors duration-300 hover:text-accent" style={{ fontSize: '17px', color: '#5c6642' }}>
-            info.richapple@gmail.com
+          <a href="mailto:info.richappleagrotech@gmail.com" className="font-sans transition-colors duration-300 hover:text-accent" style={{ fontSize: '17px', color: '#5c6642' }}>
+            info.richappleagrotech@gmail.com
           </a>
         </div>
         <div className="contact-card bg-white text-center" style={{ border: '1px solid #e5e2d8', borderRadius: '8px', padding: '48px 36px' }}>

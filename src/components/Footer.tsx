@@ -12,10 +12,10 @@ const quickLinks = [
 ]
 
 const heroProductLinks = [
-  'INDIRA Plant Booster',
-  'INDIRA Drip Special',
-  'INDIRA Granules',
-  'INDIRA Pro Maxx',
+  { name: 'INDIRA Plant Booster', path: '/hero-products#indira-booster' },
+  { name: 'INDIRA Drip Special', path: '/hero-products#indira-drip' },
+  { name: 'INDIRA Granules', path: '/hero-products#indira-granules' },
+  { name: 'INDIRA Pro Maxx', path: '/hero-products#indira-pro-maxx' },
 ]
 
 export default function Footer() {
@@ -72,13 +72,13 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col" style={{ gap: '12px' }}>
               {heroProductLinks.map((product) => (
-                <li key={product}>
+                <li key={product.name}>
                   <Link
-                    to="/hero-products"
+                    to={product.path}
                     className="font-sans text-sm transition-all duration-300 hover:text-accent hover:translate-x-1 inline-block"
                     style={{ color: 'rgba(255,255,255,0.6)' }}
                   >
-                    {product}
+                    {product.name}
                   </Link>
                 </li>
               ))}
@@ -104,11 +104,11 @@ export default function Footer() {
                 +91 84215 32100
               </a>
               <a
-                href="mailto:info.richapple@gmail.com"
+                href="mailto:info.richappleagrotech@gmail.com"
                 className="font-sans text-sm transition-colors duration-300 hover:text-accent"
                 style={{ color: 'rgba(255,255,255,0.6)' }}
               >
-                info.richapple@gmail.com
+                info.richappleagrotech@gmail.com
               </a>
               <div className="flex flex-col" style={{ gap: '4px' }}>
                 <p className="font-sans text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>
