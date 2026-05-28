@@ -1,5 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { Camera, Maximize2 } from 'lucide-react'
+import { Camera } from 'lucide-react'
 
 /* ─── Gallery Header ─── */
 function GalleryHeader() {
